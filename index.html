@@ -4,11 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UpWay — Elevator Installation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- lighter weights only -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;padding:0}
+    :root{
+      --bg:#0b1116; --card:#111922; --muted:#8aa0b2; --text:#e6edf3;
+      --brand:#4da3ff; --brand2:#7cd4ff; --line:#1e2a36;
+    }
+    body{font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+         font-weight:400;background:linear-gradient(180deg,#071018,#0b1116 40%,#0c141c);color:var(--text)}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .site-header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(10,16,22,.7);border-bottom:1px solid var(--line);z-index:10}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);font-weight:600;font-size:20px}
+    .brand .logo{height:44px;width:auto;border-radius:10px;background:#fff;padding:6px;display:block}
+    .nav{display:flex;gap:16px;align-items:center}
+    .nav a{color:var(--text);text-decoration:none;opacity:.85;font-weight:400}
+    .nav a:hover{opacity:1}
+    .btn{padding:10px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:600}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent;color:#001423}
+    .btn-secondary{background:transparent}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;min-height:70vh;padding:48px 0}
+    .hero-text h1{font-size:46px;font-weight:600;line-height:1.06;margin:0 0 10px}
+    .hero-text p{font-size:18px;color:var(--muted);max-width:640px;font-weight:400}
+    .cta{display:flex;gap:12px;margin:20px 0 14px}
+    .badges{display:flex;gap:14px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+    .badges li{font-size:14px;color:#b9c7d4;border:1px solid var(--line);padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.02);font-weight:400}
+    .hero-media img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .section{padding:56px 0}
+    .section h2{font-size:32px;font-weight:600;margin:0 0 20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:10px;border:1px solid var(--line)}
+    .card h3{margin:6px 0 6px;font-weight:600}
+    .card p{color:#b9c7d4;margin:0;font-weight:400}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .grid figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .grid img{display:block;width:100%;height:180px;object-fit:cover;border-bottom:1px solid var(--line)}
+    .grid figcaption{padding:8px 10px;color:#b9c7d4;font-size:13px;font-weight:400} /* уменьшил подписи */
+    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+    .contact-card{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-decoration:none;color:var(--text);font-weight:400}
+    .contact-card:hover{transform:translateY(-1px)}
+    .site-footer{border-top:1px solid var(--line);margin-top:24px}
+    .ftr{display:flex;justify-content:space-between;align-items:center;padding:16px 0;color:#9bb0c2;font-weight:400}
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .cards,.contact-cards{grid-template-columns:1fr}
+      .hero-text h1{font-size:36px}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -30,7 +80,7 @@
     <section class="hero container">
       <div class="hero-text">
         <h1>Precision Elevator Installation</h1>
-        <p>Professional elevator installation with focus on safety, quality and on‑time delivery. UpWay is your trusted partner in vertical transportation.</p>
+        <p>Professional elevator installation with focus on safety, quality and on-time delivery. UpWay is your trusted partner in vertical transportation.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#contact">Get a Quote</a>
           <a class="btn btn-secondary" href="#projects">See Projects</a>
@@ -70,20 +120,19 @@
     <section id="projects" class="section container">
       <h2>Recent Projects</h2>
       <div class="grid">
-        <figure><img src="assets/p1.jpg" alt="Project Warsaw"><figcaption>Residential — Warsaw</figcaption></figure>
-        <figure><img src="assets/p2.jpg" alt="Project Paris"><figcaption>Office Tower — Paris</figcaption></figure>
-        <figure><img src="assets/p3.jpg" alt="Project Metz"><figcaption>Commercial — Metz</figcaption></figure>
-        <figure><img src="assets/p4.jpg" alt="Project Bordeaux"><figcaption>Hospital — Bordeaux</figcaption></figure>
+        <figure><img src="assets/p1.jpg" alt="Project Warsaw"><figcaption>Warsaw</figcaption></figure>
+        <figure><img src="assets/p2.jpg" alt="Project Paris"><figcaption>Paris</figcaption></figure>
+        <figure><img src="assets/p3.jpg" alt="Project Metz"><figcaption>Metz</figcaption></figure>
+        <figure><img src="assets/p4.jpg" alt="Project Bordeaux"><figcaption>Bordeaux</figcaption></figure>
       </div>
-      <p class="note">You asked to keep: Warsaw, Paris, Metz, Bordeaux.</p>
     </section>
 
     <section id="about" class="section container">
       <h2>About UpWay</h2>
       <div class="about">
-        <p>UpWay is an independent installation team led by a technician with 15+ years of hands‑on experience across Europe. We assemble world‑class systems with clean workmanship, rigorous safety, and clear communication on site.</p>
+        <p>UpWay is an independent installation team led by a technician with 15+ years of hands-on experience across Europe. We assemble world-class systems with clean workmanship, rigorous safety, and clear communication on site.</p>
         <ul>
-          <li>Clean, precise, and on‑schedule work</li>
+          <li>Clean, precise, and on-schedule work</li>
           <li>Certified compliance and safety documentation</li>
           <li>Flexible team size — per project needs</li>
         </ul>
@@ -112,5 +161,16 @@
       <a href="#home">Back to top ↑</a>
     </div>
   </footer>
+
+  <script>
+    // плавный скролл
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+  </script>
 </body>
 </html>
